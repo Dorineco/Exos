@@ -45,6 +45,18 @@
   font-size: 30px;
   text-align: center;
 }
+.octobre > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.octobre > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
 </style>
 </head>
 <body>
@@ -66,8 +78,11 @@
 </div>
 <p>Explication: structure faite avec grid-template-columns: 1fr 1fr 1fr; et grid-template-rows: 1fr 1fr;et gap entre les éléments grâce à gap: 50px</p>
 <p>Exemple No3: Page de calendrier</p>
+
+<div class="octobre">
+    <div>Octobre</div>
+</div>
 <div class="calendrier">
-  <div>Octobre</div>
   <div>1</div>
   <div>2</div>
   <div>3</div>
@@ -100,6 +115,6 @@
   <div>30</div>
   <div>31</div>
 </div>
-<p>Explication: Structure faite avec grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; et grid-template-rows: 1fr 1fr 1fr 1fr 1fr; espacement avec gap: 20px;</p>
+<p>Explication: Structure du "mois" faite avec grid-template-columns: 1fr; grid-template-rows: auto;- Structure des jours faite avec grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; et grid-template-rows: 1fr 1fr 1fr 1fr 1fr; espacement avec gap: 20px;</p>
 </body>
 </html>
