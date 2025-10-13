@@ -4,7 +4,6 @@ body {
     font-family: sans-serif;
 }
 
-
 header {
     padding: 2em;
     background-color: rgb(52, 52, 202);
@@ -14,11 +13,19 @@ header {
     text-align: left;
 }
 
+@media (max-width: 510px){
+    header {background-color: rgb(226, 217, 43);}
+}
+
 main {
     padding: 2em;
     color:black;
     background-color: white;
     min-height: 80vh;
+}
+
+@media (max-width: 510px){
+    main {background-color: blueviolet;}
 }
 
 footer {
@@ -30,7 +37,7 @@ footer {
 
 
 a {
-    color: white;
+    color: rgb(12, 2, 2);
 }
 
 .article {
