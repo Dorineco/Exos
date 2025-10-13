@@ -4,28 +4,40 @@ body {
     font-family: sans-serif;
 }
 
+/*Style général*/
 header {
     padding: 2em;
-    background-color: rgb(52, 52, 202);
-    color: black;
+    background-color: rgb(123, 123, 231);
+    color: rgb(255, 255, 255);
     height: 10vh;
     display: block;
     text-align: left;
 }
 
+/* Mobile*/
 @media (max-width: 510px){
     header {background-color: rgb(226, 217, 43);}
+}
+/* Tablette*/
+@media (max-width: 900px){
+    header {background-color: rgb(22, 166, 198);}
+}
+/* Desktop*/
+@media (max-width: 1024px){
+    header {background-color: rgb(237, 236, 226);}
 }
 
 main {
     padding: 2em;
-    color:black;
     background-color: white;
     min-height: 80vh;
 }
 
 @media (max-width: 510px){
     main {background-color: blueviolet;}
+}
+@media print {
+    main {background-color: rgb(5, 0, 9);}
 }
 
 footer {
@@ -35,10 +47,6 @@ footer {
     min-height: 5vh;
 }
 
-
-a {
-    color: rgb(12, 2, 2);
-}
 
 .article {
     padding-top: 9em;
@@ -50,12 +58,13 @@ a {
     max-width: 20;
     text-align: right;
     font: size 20px;
-    color: black;        
+    color: rgb(250, 247, 247); 
+    font-weight: bold;       
 }
 
 .btn {
-    padding: 1em;
-    background-color: rgb(73, 70, 70);
+    background-color: rgb(129, 231, 229);
+    color:rgb(0, 0, 0)
 }
 
 .form {
@@ -70,9 +79,8 @@ h2 {
 
 p {
     text-align: center;
+    font-size: 20px;
 }
 
-h3 {
-    color: rgb(9, 8, 8)
-}
+
 
