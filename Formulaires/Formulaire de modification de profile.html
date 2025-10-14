@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de modification de profile</title>
+    <link rel=stylesheet href="../Formulaires/CSS/style.css">
+</head>
+<body>
+
+            <form action="#" method="post" autocomplete="off">
+                <legend>Formulaire de modification de profile</legend>
+                    <fieldset>
+                        <label for="nom">Nom :</label>
+                        <input type="text" name="nom" id="nom"
+                        required maxlength="40">
+
+                        <label for="prénom">Prénom :</label>
+                        <input type="text" name="prénom" id="prénom"
+                        required maxlength="30">
+
+                        <label for="pseudo">Pseudo :</label>
+                        <input type="text" name="prénom" id="prénom"
+                        required minlength="5" pattern="[A-Za-z0-9]+>
+
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email"
+                        required maxlength="50" autocomplete="off">
+
+                        <label for="password">Mot de passe :</label>
+                        <input type="password" name="password" id="password"
+                        required minlength="12 "maxlength="20" autocomplete="off">
+
+                        <label for="Photo">Photo de profil :</label>
+                        <input type="file" id="PhotoProfile" name="PhotoProfile" accept="image/png, image/jpeg" />
+
+                        <label><input type="radio" name="civilité" value="monsieur"> Monsieur</label>
+                        <label><input type="radio" name="civilité" value="madame"> Madame</label>
+                        
+                        <label><input type="checkbox" name="abonnement" value="oui"> Je souhaite recevoir la newsletter.</label>
+                        
+                        <label><input type="checkbox" name="CGU" value="oui"> J'accepte les conditions générales d'utilisation.</label>
+                        
+                        <label><input type="checkbox" name="CGV" value="oui"> J'accepte les conditions générales de vente.</label>
+                        
+                        <label><input type="checkbox" name="cookies" value="oui"> En cliquant sur ce bouton, vous acceptez notre utilisation de cookies conformément à notre politique de confidentialité.</label>
+                        
+                        <label for="presentation">Votre présentation :</label>
+                        <textarea id="presentation" name="presentation" rows="5" cols="40" placeholder="Écrivez ici..."></textarea>    
+                        
+                        <label for ="Anniversaire">Entrez votre date de naissance</label>
+                        <input type="date" name="anniversaire">
+
+                        <label for="pays">Pays :</label>
+                        <select id="pays" name="pays" required>
+                        <option value="">--Choisissez--</option>
+                        <option value="fr">France</option>
+                        <option value="it">Italie</option>
+                        <option value="esp">Espagne</option>
+                        <option value="de">Allemagne</option>
+                        <option value="ch">Suisse</option>
+                        <option value="UK">Angleterre</option>
+                        <option value="other">Autre</option>
+                        </select>
+
+                        <label for="roles">Rôles :</label>
+                        <select name="roles[]" multiples>
+                        <option value="utilisateur">Utilisateur</option>
+                        <option value="invite">Invité</option>
+                        <option value="redacteur">Rédacteur</option>
+                        <option value="admin">Admin</option>
+                        </select>
+                    </fieldset>
+            </form>   
+        <button type="submit">Modifier le profile</button>         
+    
+</body>
+</html>

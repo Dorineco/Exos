@@ -1,24 +1,32 @@
 
 body {
-    font: 21px sans-serif;
-    padding: 2em;
-    margin: 0;
-    background: #5e5d5d;
+    font-family:"trebuchet ms",sans-serif;
+    font-size:90%;
+    }
+
+form {
+    background-color:#FAFAFA;
+    padding:10px;
+    width:680px;
 }
 
-
-.formulaire > div {
-    display: flex;
-    justify-content: left;
+fieldset {
+    padding:0 20px 20px 20px;
+    margin-bottom:10px;
+    border:1px solid #DF3F3F;
 }
 
-.separation {
-    padding-top: 50px;
-}
+legend {
+    color:#DF3F3F;
+    font-weight:bold
+    }
 
-.connection {
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-background-color: rgb(62, 51, 215);
-}
+label {
+    margin-top:10px;
+    display:block;
+    }
+
+select {
+    margin-top:10px;
+    }
+
