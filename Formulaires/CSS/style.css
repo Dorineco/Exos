@@ -1,0 +1,24 @@
+
+body {
+    font: 21px sans-serif;
+    padding: 2em;
+    margin: 0;
+    background: #5e5d5d;
+}
+
+
+.formulaire > div {
+    display: flex;
+    justify-content: left;
+}
+
+.separation {
+    padding-top: 50px;
+}
+
+.connection {
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+background-color: rgb(62, 51, 215);
+}
