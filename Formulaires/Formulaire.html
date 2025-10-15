@@ -6,8 +6,7 @@
     <link rel=stylesheet href="../Formulaires/CSS/style.css">
 </head>
 <body>
-    <div class="formulaire">
-            <form action="#" method="post" autocomplete="off">
+                <form action="#" method="post" autocomplete="off">
                 <legend>Formulaire d'inscription</legend>
                     <fieldset>
                         <label for="nom">Nom :</label>
@@ -28,22 +27,31 @@
                         </fieldset>
             </form>   
         <button type="submit">Créer un compte</button>         
-    </div>
+    
     <div class="separation">
     </div>
-    <div class="connection">
-        <form action="#" method="post" autocomplete="off">
+    
+        <form aria-labelledby="formulaire-connection"><action="#" method="post" autocomplete="off">
             <legend>Formulaire de connection</legend>
                 <fieldset>
+                    <label for="username">Nom d'utilisateur :</label>
                     <input type="text" name="username" required maxlength="50" placeholder="Nom d'utilisateur">
+                    <label for="password">Mot de passe :</label>
                     <input type="text" name="password" required minlength="12" maxlength="20" placeholder="Mot de passe">
-                    <button type="submit">Connection</button>
                 </fieldset>
+                
         </form>            
-    </div>
+    <h1 id="page-title">Connexion</h1>
 
+<form aria-labelledby="page-title">
+    <label for="identifiant">Identifiant</label>
+    <input type="text" id="identifiant" aria-describedby="info-identifiant">
+    <small id="info-identifiant">Votre identifiant personnel fourni par l'administration.</small>
 
-
+    <button type="submit" aria-label="Valider la connexion">
+        <svg><!-- icône de validation --></svg>
+    </button>
+</form>
 </body>
 </html>
 

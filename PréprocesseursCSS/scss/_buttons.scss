@@ -1,0 +1,23 @@
+@use 'variables' as var;
+@use 'mixins' as mix;
+
+    .btn {
+    @include mix.button-base();
+    background: var.$accent;
+    color: var.$primary;
+    border: 2px solid var.$primary;
+    transition: all .18s ease;
+
+    &:hover { transform: translateY(-2px); }
+
+    }
+    
+    .btn primary {
+    @include mix.button-base();
+    background: var.$accent;
+    color: var.$accent;
+    border: 2px solid var.$primary;
+    transition: all .18s ease;
+
+    &:hover { transform: translateY(-2px); }    
+    }

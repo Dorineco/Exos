@@ -1,23 +1,23 @@
 
 body {
     font-family:"trebuchet ms",sans-serif;
-    font-size:90%;
     }
 
 form {
+    display:flex;
+    justify-content: center;
     background-color:#FAFAFA;
     padding:10px;
-    width:680px;
 }
 
 fieldset {
     padding:0 20px 20px 20px;
     margin-bottom:10px;
-    border:1px solid #DF3F3F;
+    border:1px solid #6097eb;
 }
 
 legend {
-    color:#DF3F3F;
+    color: #6097eb;
     font-weight:bold
     }
 
@@ -28,5 +28,9 @@ label {
 
 select {
     margin-top:10px;
+    }
+
+input, textarea, select, option {
+    background-color:#FFF3F3;
     }
 

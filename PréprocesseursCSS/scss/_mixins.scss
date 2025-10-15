@@ -1,0 +1,12 @@
+// _mixins.scss
+@use 'sass:color';
+@use 'variables' as var;
+@mixin button-base($padding: 0.5rem 1rem) {
+    display: inline-block;
+    padding: $padding;
+    border-radius: var.$radius;
+    font-family: var.$font-stack;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    }
