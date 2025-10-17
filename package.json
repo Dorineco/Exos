@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Dorineco/Exos/issues"
   },
-  "homepage": "https://github.com/Dorineco/Exos#readme"
+  "homepage": "https://github.com/Dorineco/Exos#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
 }

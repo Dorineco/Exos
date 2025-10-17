@@ -1,0 +1,20 @@
+// Import des fonctions et variables de base
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+// 🎨 Personnalisation des variables principales
+$primary: #e63946;
+$secondary: #1d3557;
+$success: #2a9d8f;
+$info: #457b9d;
+$warning: #f4a261;
+$danger: #e76f51;
+$light: #f1faee;
+$dark: #1d3557;
+
+$body-bg: #f8f9fa;
+$body-color: #212529;
+$font-family-base: 'Roboto', sans-serif;
+
+// Import du reste de Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
