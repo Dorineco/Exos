@@ -1,4 +1,13 @@
-//ex1()ex2()ex3()ex4()ex5()ex6()ex7()ex8()ex9()direBonjour()//
+ex1()
+ex2()
+ex3()
+ex4()
+ex5()
+ex6()
+ex7()
+ex8()
+ex9()
+direBonjour()
 
 //Ex10//
 
@@ -117,7 +126,7 @@ function ex9() {
     console.log("1er élément :", nombres[0] + " dernier élément :" + nombres[4]);
     console.log("Contient 8 :", nombres.includes(8));
     console.log("Index du nombre 5 :", nombres.indexOf(5));
-    console.log("Index du nombre 5 :", nombres.sort());
+    console.log("Tableau trié par sort :", nombres.sort());
     let TableauTrié = nombres.toSorted((a, b) => a - b);
     console.log(TableauTrié)
 }
@@ -136,9 +145,9 @@ saluer("Théo");
 //Ex12//
 function addition(a, b) {
     return a + b;
+    let total = addition(12, 5)
+    console.log(total);
 }
-let total = addition(12, 5)
-console.log(total);
 
 //Ex13//
 let prenoms = ["Léa", "Tom", "Inès", "Adam"];
@@ -146,6 +155,7 @@ function afficherListe() {
     prenoms.forEach(prenom => console.log(prenom));
 }
 afficherListe()
+
 prenoms.push("Jessica")
 afficherListe()
 
@@ -182,10 +192,49 @@ comparateur()
 
 function moyenneTableau() {
     let tableauMoyenne = [12, 5, 8, 130, 44];
-    
-
-
-
-
+    let somme = 0;
+    for (let nombre of tableauMoyenne) {
+        somme += nombre;
+    }
+    let moyenne = somme / tableauMoyenne.length;
+    console.log(`La moyenne est : ${moyenne}`);
 }
 moyenneTableau();
+
+function rechercheElement() {
+    let recherche = ["Alice", "Bob", "Charlie", "David"];
+    console.log(recherche.includes("Charlie"));
+
+}
+rechercheElement();
+
+function comparaisonTableau() {
+    let comparaisonTaille = [12, 5, 8, 130, 44];
+    let min = Math.min(...comparaisonTaille);
+    let max = Math.max(...comparaisonTaille);
+    console.log(`Le plus petit nombre est : ${min}`);
+    console.log(`Le plus grand nombre est : ${max}`);
+}
+comparaisonTableau();
+
+function inverseTableau() {
+    let inverse = [12, 5, 8, 130, 44];
+    console.log(inverse[4], inverse[3], inverse[2], inverse[1] + inverse[0]);
+
+}
+inverseTableau();
+
+function voyelleCompteur() {
+    let phrase = "Coder c'est super.";
+    let voyelles = "aeiouyAEIOUY";
+    let compteur = 0;
+
+    for (let char of phrase) {
+        if (voyelles.includes(char)) {
+            compteur++;
+        }
+    }
+    console.log(`Le nombre de voyelles dans votre phrase est : ${compteur}`);
+}
+
+voyelleCompteur();
