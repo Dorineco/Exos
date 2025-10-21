@@ -1,0 +1,32 @@
+Bonjour utilisateur
+Demande à l’utilisateur son nom et affiche :
+indice : let nom = prompt(); 
+prompt(); est une fonction qui prend en  argument, une chaine de caractères  (par exemple une question)
+"Bonjour [nom] !" 
+Pair ou impair
+Demande un nombre et affiche s’il est pair ou impair.
+Comparateur
+Demande deux nombres et affiche le plus grand des deux. 
+Somme de 1 à N
+Demande un nombre N et calcule la somme des entiers de 1 à N. 
+Table de multiplication
+Demande un nombre et affiche sa table de multiplication (jusqu’à 10). 
+Niveau 2 — Boucles et tableaux
+Objectif : manipuler des tableaux, boucler et faire des calculs simples.
+
+Moyenne d’un tableau
+Crée un tableau de nombres [12, 5, 8, 130, 44]
+→ Calcule et affiche la moyenne.
+
+Recherche d’un élément
+Demande un nom et vérifie s’il est dans le tableau :
+["Alice", "Bob", "Charlie", "David"]
+
+Maximum et minimum
+Trouve le plus grand et le plus petit élément d’un tableau.
+
+Inverser un tableau
+Écris une fonction qui renvoie un tableau inversé (sans utiliser .reverse()).
+
+Compter les voyelles
+Demande une phrase et compte le nombre de voyelles.
