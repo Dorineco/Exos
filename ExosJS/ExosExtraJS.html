@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bonjour utilisateur</title>
+</head>
+<body>
+
+    <h1>Bienvenue !</h1>
+    <button onclick="demanderNom()">Clique ici</button>
+    <button onclick="donnerNombre()">Clique ici</button>
+
+    <p id="message"></p>
+    <p id="nombre"></p>
+
+    <script>
+        function demanderNom() {
+            let nom = prompt("Quel est ton nom ?");
+            document.getElementById("message").textContent = `Bonjour ${nom} !`;
+        }
+        function pairImpair() {
+            let nombre = prompt("Donnez-moi un nombre :");
+            nombre = parseInt(nombre);
+            if (nombre % 2 ==0) {
+                document.getElementById("nombre").textContent = "Le nombre est pair";
+            } else {
+                document.getElementById("nombre").textContent = "Le nombre est impair";
+                }
+        }
+    </script>
+
+</body>
+</html>
