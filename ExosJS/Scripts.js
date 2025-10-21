@@ -126,6 +126,7 @@ function ex9() {
     console.log("1er élément :", nombres[0] + " dernier élément :" + nombres[4]);
     console.log("Contient 8 :", nombres.includes(8));
     console.log("Index du nombre 5 :", nombres.indexOf(5));
+    console.log("Index du nombre 5 :", nombres.sort());
     let TableauTrié = nombres.toSorted((a, b) => a - b);
     console.log(TableauTrié)
 }    
