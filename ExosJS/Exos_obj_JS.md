@@ -19,3 +19,4 @@ modele
 annee
 une méthode info() qui affiche une phrase comme :
 "Peugeot 208 de 2018"
+

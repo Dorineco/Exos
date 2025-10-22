@@ -145,8 +145,6 @@ saluer("Théo");
 //Ex12//
 function addition(a, b) {
     return a + b;
-    let total = addition(12, 5)
-    console.log(total);
 }
 
 //Ex13//
