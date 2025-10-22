@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple init()</title>
+</head>
+<body>
+
+    <h1>Démo de la fonction init()</h1>
+    <button id="btnSalut">Cliquer ici</button>
+
+    <script>
+        function init() {
+            console.log("Initialisation de la page...");
+
+            // On récupère le bouton
+            let bouton = document.getElementById("btnSalut");
+
+            // On écoute le clic sur le bouton
+            bouton.addEventListener("click", direBonjour);
+        }
+
+        function direBonjour() {
+            console.log("Bonjour à tous !");
+            alert("Salut");
+        }
+
+        // Appel de init() dès que la page est chargée
+        window.onload = init;
+    </script>
+
+</body>
+</html>
