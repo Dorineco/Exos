@@ -1,6 +1,9 @@
 
 //Niveau 1 — Bases et logique//
 
+//for(let i = 1; i <=25; i++){
+// console.log(`\n function exo_${i}(){ \n //code here \n }`);//
+
 //Ex1//
 function ex1() {
     let prenom = "Léa";
@@ -196,15 +199,15 @@ function gestionEleves() {
     let meilleur = eleves[0];
     const moyenne = somme / eleves.length;
 
-for (let eleve of eleves) {
-    somme += eleve.note;
+    for (let eleve of eleves) {
+        somme += eleve.note;
 
-    if (eleve.note > meilleur.note) {
-        meilleur = eleve;
+        if (eleve.note > meilleur.note) {
+            meilleur = eleve;
+        }
     }
-}
-console.log(`La moyenne générale est ${moyenne}`);
-console.log(`Le meilleur élève est ${meilleur.nom} avec ${meilleur.note} points`);
+    console.log(`La moyenne générale est ${moyenne}`);
+    console.log(`Le meilleur élève est ${meilleur.nom} avec ${meilleur.note} points`);
 
 }
 gestionEleves();
@@ -219,8 +222,129 @@ function triEleves() {
     ];
     eleves.push({ nom: "David", note: 18 })
     eleves.sort((a, b) => b.note - a.note);
-    
-console.log(eleves);
+
+    console.log(eleves);
 };
 
 triEleves();
+
+//Ex19//
+
+const eleves = [
+    { nom: "Alice", note: 12 },
+    { nom: "Bob", note: 8 },
+    { nom: "Charlie", note: 17 },
+    { nom: "David", note: 18 }
+];
+
+function supprimerEleve(nom) {
+    return eleves.filter(eleve => eleve.nom !== nom);
+}
+
+const elevesApresSuppression = supprimerEleve("Bob");
+console.log(elevesApresSuppression);
+
+supprimerEleve();
+
+//Ex20//
+
+const produits = [
+    { nom: "Pomme", categorie: "Fruit" },
+    { nom: "Carotte", categorie: "Légume" },
+    { nom: "Banane", categorie: "Fruit" }
+];
+
+function regrouperParCategorie(liste) {
+    return liste.reduce((acc, produit) => {
+        const cat = produit.categorie;
+        if (!acc[cat]) {
+            acc[cat] = [];
+
+        }
+        acc[cat].push(produit.nom);
+        return acc;
+    }, {}
+    );
+}
+
+console.log(regrouperParCategorie(produits));
+
+//Ex21//
+
+function anagrammes(mot1, mot2) {
+    const tri1 = mot1.split('').sort().join('');
+    const tri2 = mot2.split('').sort().join('');
+    return tri1 === tri2;
+}
+
+console.log(anagrammes("chien", "niche"));
+console.log(anagrammes("chat", "tache"));
+
+//Ex22//
+
+function compterMots(phrase) {
+    const mots = phrase.trim().split(/\s+/);
+    return mots.length;
+}
+console.log(compterMots("Les développeurs adorent coder vite"));
+console.log(compterMots(" Bonjour tout le monde ! "));
+compterMots("Les développeurs adorent coder vite")
+compterMots("  Bonjour   tout le monde !  ")
+
+//Ex23//
+
+const mots = ["clavier", "developpeur", "serveur", "ordinateur", "souris"];
+mots.sort((a, b) => a.length - b.length);
+
+console.log(mots);
+
+//Ex24//
+function parenthesesBienFermees(chaine) {
+    let compteur = 0;
+
+    for (let char of chaine) {
+        if (char === '(') {
+            compteur++;
+        } else if (char === ')') {
+            compteur--;
+            if (compteur < 0) return false;
+        }
+    }
+
+    return compteur === 0;
+}
+
+console.log(parenthesesBienFermees("()()((()))"));
+console.log(parenthesesBienFermees("(()"));
+console.log(parenthesesBienFermees("())("));
+
+//Ex25//
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const mystere = Math.floor(Math.random() * 100) + 1;
+let essais = 0;
+
+console.log("Je pense à un nombre entre 1 et 100...");
+rl.setPrompt("Devine : ");
+rl.prompt();
+
+rl.on('line', (reponse) => {
+    const nombre = parseInt(reponse);
+    essais++;
+
+    if (nombre < mystere) {
+        console.log("Plus grand !");
+    } else if (nombre > mystere) {
+        console.log("Plus petit !");
+    } else {
+        console.log(`Bravo ! Tu as trouvé ${mystere} en ${essais} essais.`);
+        return rl.close();
+    }
+
+});
