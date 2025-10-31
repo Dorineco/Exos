@@ -13,19 +13,19 @@
     <h2>Exo 1</h2>
     <h3 id="titre">Bonjour !</h3>
     <script>
-    const titre = document.getElementById("titre");
-    titre.textContent = "Bienvenue dans la formation DWWM !";
+        const titre = document.getElementById("titre");
+        titre.textContent = "Bienvenue dans la formation DWWM !";
     </script>
     <hr>
     <!-- Exo 2 -->
     <h2>Exo 2</h2>
     <p id="message">Ce texte doit devenir rouge et en gras</p>
     <hr>
-        <script>
+    <script>
         const message = document.getElementById("message");
         message.style.color = "red";
         message.style.fontweight = "bold";
-        </script>
+    </script>
     <!-- Exo 3 -->
     <h2>Exo 3</h2>
     <ul>
@@ -36,18 +36,19 @@
     <hr>
 
     <script>
-    const liste = document.querySelectorAll("li"); 
-    liste.forEach(item => {item.style.color = "blue"
-    });
+        const liste = document.querySelectorAll("li");
+        liste.forEach(item => {
+            item.style.color = "blue"
+        });
     </script>
 
     <!-- Exo 4 -->
     <h2>Exo 4</h2>
     <div id="exo4">
         <script>
-        const newParagraphe = document.createElement("p");
-        newParagraphe.textContent = "Le DOM est puissant!";
-        document.body.appendChild(newParagraphe);
+            const newParagraphe = document.createElement("p");
+            newParagraphe.textContent = "Le DOM est puissant!";
+            document.body.appendChild(newParagraphe);
         </script>
 
     </div>
@@ -58,7 +59,7 @@
         <li>Pomme</li>
         <li>Banane</li>
     </ul>
-<hr>
+    <hr>
     <script>
         const newElt = document.createElement("li");
         newElt.textContent = "Fraise";
@@ -71,20 +72,63 @@
     <button id="btn">Clique-moi</button>
     <p id="resultat"></p>
     <hr>
+    <script>
+        const bouton = document.getElementById("btn");
+        const resultat = document.getElementById("resultat");
+        bouton.addEventListener("click", function () {
+            resultat.textContent = "Bouton cliqué";
+        })
+    </script>
     <!-- Exo 8 -->
     <h2>Exo 8</h2>
     <div id="carre" style="width:100px; height:100px; background-color:gray;"></div>
     <hr>
+    <script>
+        const carre = document.getElementById("carre");
+        carre.addEventListener("click", function () {
+            if (carre.style.backgroundColor === "gray") {
+                carre.style.backgroundColor = 'green';
+            } else {
+                carre.style.backgroundColor = 'gray';
+            }
+        })
+    </script>
+
     <!-- Exo 9 -->
     <h2>Exo 9</h2>
     <input type="text" id="prenom" placeholder="Entrez votre prénom">
     <button id="afficherExo9">Afficher</button>
     <p id="resultatExo9"></p>
     <hr>
+
+    <script>
+        const prenom = document.getElementById("prenom");
+        const afficherExo9 = document.getElementById("afficherExo9");
+        const resultatExo9 = document.getElementById("resultatExo9");
+
+        afficherExo9.addEventListener("click", function () {
+            const valeur = prenom.value;
+            resultatExo9.textContent = `Bonjour, ${valeur}!`;
+        });
+    </script>
+
     <!-- Exo 10 -->
     <h2>Exo 10</h2>
     <div id="listeFruits"></div>
     <hr>
+    <!-- <script>
+        const fruits = ["Pomme", "Banane", "Fraise", "Orange"];
+        const ul = document.createElement("ul");
+        fruits.forEach(fruit => {
+            const li = document.createElement(`li`)
+            li.textContent = fruit;
+            ul.appendChild(li);
+        });
+        const listeFruits = document.getElementById("listeFruits");
+        listeFruits.appendChild(ul);
+    </script> -->
+
+
     <!-- Exo 11 -->
     <h2>Exo 11</h2>
     <button id="plus">+</button>
