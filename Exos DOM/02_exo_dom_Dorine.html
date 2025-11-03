@@ -162,32 +162,32 @@
     <ul id="liste12"></ul>
     <hr>
     <script>
-// récuperer les elts du dom
+        // récuperer les elts du dom
         const input = document.getElementById("item");
         const boutonAjouter = document.getElementById("ajouter");
         const listeElements = document.getElementById("liste12");
-// ajouter un element
+        // ajouter un element
         function ajouterElement() {
             const valeur = input.value;
             if (valeur === "") return;
-// créer un li
+            // créer un li
             const li = document.createElement("li");
             li.textContent = valeur;
-// créer le bouton suppr       
+            // créer le bouton suppr       
             const btnSupprimer = document.createElement("button");
             btnSupprimer.textContent = "❌";
-// evenement pour suppr           
+            // evenement pour suppr           
             btnSupprimer.addEventListener("click", () => {
                 liste12.removeChild(li);
             });
-//ajouter le bouton suppr au li
+            //ajouter le bouton suppr au li
             li.appendChild(btnSupprimer);
-//ajouter le li à la liste
+            //ajouter le li à la liste
             liste12.appendChild(li);
-            }
-//evenement ajouter       
-            boutonAjouter.addEventListener("click", ajouterElement);
-    ;
+        }
+        //evenement ajouter       
+        boutonAjouter.addEventListener("click", ajouterElement);
+        ;
     </script>
 
 
@@ -202,42 +202,42 @@
     <ul id="liste13"></ul>
 
     <script>
-        
-// récuperer les elts du dom
+
+        // récuperer les elts du dom
         const input13 = document.getElementById("tache");
-        const boutonAjout = document.getElementById("ajouter13");
+        const btnAjout = document.getElementById("ajouter13");
         const listeTaches = document.getElementById("liste13");
 
-
-// ajouter un element
+        // ajouter un element
         function ajouterTache() {
             const valeur = input13.value;
             if (valeur) return;
-// créer un li
+        // créer un li
             const li = document.createElement("li");
             li.textContent = valeur;
-//créer bouton pour done
+        //créer bouton pour done
             const btnDone = document.createElement("button");
             btnDone.textContent = "Done";
             btnDone.addEventListener("click", () => {
                 li.style.textDecoration = "line-through";
             });
-//créer bouton suppr
+        //créer bouton suppr
             const btnSuppr = document.createElement("button");
             btnSuppr.textContent = "❌";
-            btnSuppr.addEventListener("click", () => {
-            listeTaches.removeChild(li);
+            btnSuppr.addEventListener("click", () => 
+            { liste13.removeChild(li);
             });
-//ajouter le bouton suppr au li
+        //ajouter le bouton suppr au li
             li.appendChild(btnSuppr);
-//ajouter le bouton Done au li
+        //ajouter le bouton Done au li
             li.appendChild(btnDone);
-//ajouter le li à la liste
-            listeTaches.appendChild(li);
-            }
-//evenement ajouter       
-        boutonAjout.addEventListener("click", ajouterTache);
- 
+        //ajouter le li à la liste
+            liste13.appendChild(li);
+        }
+        //evenement ajouter       
+    btnAjout.addEventListener("click", ajouterTache);
+
     </script>
 </body>
+
 </html>
