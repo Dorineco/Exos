@@ -211,7 +211,7 @@
         // ajouter un element
         function ajouterTache() {
             const valeur = input13.value;
-            if (valeur) return;
+            if (!valeur) return;
         // créer un li
             const li = document.createElement("li");
             li.textContent = valeur;
