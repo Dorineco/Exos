@@ -135,15 +135,109 @@
     <span id="compteur">0</span>
     <button id="moins">-</button>
     <hr>
+
+    <script>
+
+        const boutonPlus = document.getElementById("plus");
+        const boutonMoins = document.getElementById("moins");
+        const compteurClick = document.getElementById("compteur");
+        let compteur = 0;
+
+        boutonPlus.addEventListener("click", function () {
+            compteur++;
+            compteurClick.textContent = compteur;
+        });
+
+        boutonMoins.addEventListener("click", function () {
+            compteur--;
+            compteurClick.textContent = compteur;
+        });
+    </script>
+
+
     <!-- Exo 12 -->
     <h2>Exo 12</h2>
     <input id="item" type="text" placeholder="Nouvel élément">
     <button id="ajouter">Ajouter</button>
-    <ul id="liste"></ul>
+    <ul id="liste12"></ul>
     <hr>
+    <script>
+// récuperer les elts du dom
+        const input = document.getElementById("item");
+        const boutonAjouter = document.getElementById("ajouter");
+        const listeElements = document.getElementById("liste12");
+// ajouter un element
+        function ajouterElement() {
+            const valeur = input.value;
+            if (valeur === "") return;
+// créer un li
+            const li = document.createElement("li");
+            li.textContent = valeur;
+// créer le bouton suppr       
+            const btnSupprimer = document.createElement("button");
+            btnSupprimer.textContent = "❌";
+// evenement pour suppr           
+            btnSupprimer.addEventListener("click", () => {
+                liste12.removeChild(li);
+            });
+//ajouter le bouton suppr au li
+            li.appendChild(btnSupprimer);
+//ajouter le li à la liste
+            liste12.appendChild(li);
+            }
+//evenement ajouter       
+            boutonAjouter.addEventListener("click", ajouterElement);
+    ;
+    </script>
+
+
+
+
     <!-- Exo 13 -->
     <h2>Exo 13</h2>
     <h3>Todo Liste</h3>
-</body>
 
+    <input id="tache" type="text" placeholder="Nouvelle tâche">
+    <button id="ajouter13">Ajouter</button>
+    <ul id="liste13"></ul>
+
+    <script>
+        
+// récuperer les elts du dom
+        const input13 = document.getElementById("tache");
+        const boutonAjout = document.getElementById("ajouter13");
+        const listeTaches = document.getElementById("liste13");
+
+
+// ajouter un element
+        function ajouterTache() {
+            const valeur = input13.value;
+            if (valeur) return;
+// créer un li
+            const li = document.createElement("li");
+            li.textContent = valeur;
+//créer bouton pour done
+            const btnDone = document.createElement("button");
+            btnDone.textContent = "Done";
+            btnDone.addEventListener("click", () => {
+                li.style.textDecoration = "line-through";
+            });
+//créer bouton suppr
+            const btnSuppr = document.createElement("button");
+            btnSuppr.textContent = "❌";
+            btnSuppr.addEventListener("click", () => {
+            listeTaches.removeChild(li);
+            });
+//ajouter le bouton suppr au li
+            li.appendChild(btnSuppr);
+//ajouter le bouton Done au li
+            li.appendChild(btnDone);
+//ajouter le li à la liste
+            listeTaches.appendChild(li);
+            }
+//evenement ajouter       
+        boutonAjout.addEventListener("click", ajouterTache);
+ 
+    </script>
+</body>
 </html>
