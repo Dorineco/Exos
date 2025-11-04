@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercices Async</title>
+    <title>Téléchargement Asynchrone</title>
 </head>
+
 <body>
-    <script src="/Exos_DOM/03_exo_async_Dorine.js"></script>
+    <h1>Téléchargement de fichier</h1>
+    <button id="btn">Télécharger</button>
+    <p id="resultat"></p>
+
+    <script>
+        // Fonction qui simule le téléchargement
+        function telechargerFichier() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const succes = Math.random() < 0.5;
+                    if (succes) {
+                        resolve("Fichier téléchargé avec succès ✅");
+                    } else {
+                        reject("Échec du téléchargement ❌");
+                    }
+                }, 2000);
+            });
+        }
+
+        // Fonction asynchrone qui interagit avec le DOM
+        async function lancerTelechargement() {
+            const zoneResultat = document.getElementById("resultat");
+            zoneResultat.textContent = "Téléchargement en cours... ⏳";
+
+            try {
+                const message = await telechargerFichier();
+                zoneResultat.textContent = message;
+                zoneResultat.style.color = "green";
+            } catch (erreur) {
+                zoneResultat.textContent = erreur;
+                zoneResultat.style.color = "red";
+            }
+        }
+
+        // Événement sur le bouton
+        document.getElementById("btn").addEventListener("click", lancerTelechargement);
+    
+    </script>
 </body>
+
 </html>
