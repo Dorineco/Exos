@@ -3,48 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Téléchargement Asynchrone</title>
+    <title>Asynchrone</title>
 </head>
 
 <body>
-    <h1>Téléchargement de fichier</h1>
-    <button id="btn">Télécharger</button>
-    <p id="resultat"></p>
-
-    <script>
-        // Fonction qui simule le téléchargement
-        function telechargerFichier() {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    const succes = Math.random() < 0.5;
-                    if (succes) {
-                        resolve("Fichier téléchargé avec succès ✅");
-                    } else {
-                        reject("Échec du téléchargement ❌");
-                    }
-                }, 2000);
-            });
-        }
-
-        // Fonction asynchrone qui interagit avec le DOM
-        async function lancerTelechargement() {
-            const zoneResultat = document.getElementById("resultat");
-            zoneResultat.textContent = "Téléchargement en cours... ⏳";
-
-            try {
-                const message = await telechargerFichier();
-                zoneResultat.textContent = message;
-                zoneResultat.style.color = "green";
-            } catch (erreur) {
-                zoneResultat.textContent = erreur;
-                zoneResultat.style.color = "red";
-            }
-        }
-
-        // Événement sur le bouton
-        document.getElementById("btn").addEventListener("click", lancerTelechargement);
     
-    </script>
+
+    
+    <script src="script.js" defer></script>
+    
 </body>
 
 </html>

@@ -5,43 +5,44 @@ function afficherMessage(message) {
         console.log(message);
     }, 2000);
 }
-afficherMessage("Bonjour DWWM !");
+afficherMessage("Bonjour DWWM Exo1!");
+
 
 // Ex 2
 
 function etape1(callback) {
     setTimeout(() => {
-        console.log("Étape 1 terminée");
+        console.log("Étape 1 terminée Exo2");
         callback();
     }, 1000);
 }
 
 function etape2(callback) {
     setTimeout(() => {
-        console.log("Étape 2 terminée");
+        console.log("Étape 2 terminée Exo2");
         callback();
     }, 1000);
 }
 
 function etape3(callback) {
     setTimeout(() => {
-        console.log("Étape 3 terminée");
+        console.log("Étape 3 terminée Exo2");
         callback();
     }, 1000);
 }
 
 etape1(() => {
-etape2(() => {
-etape3(() => {
-console.log("Toutes les étapes sont terminées !");
-});
-});
+    etape2(() => {
+        etape3(() => {
+            console.log("Toutes les étapes sont terminées Exo2!");
+        });
+    });
 });
 
 // Ex3
 function telechargerFichier() {
     return new Promise((resolve) => {
-        setTimeout(() => resolve("Fichier téléchargé avec succès"), 2000);
+        setTimeout(() => resolve("Fichier téléchargé avec succès Exo3"), 2000);
     });
 }
 
@@ -51,15 +52,15 @@ telechargerFichier().then((message) => {
 
 // Ex4
 function telechargerFichier() {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const reussite = Math.random() < 0.5;
             if (reussite) {
-                resolve("Fichier téléchargé avec succès");
-            }else{
-                reject("Echec du téléchargement");
+                resolve("Fichier téléchargé avec succès Exo4");
+            } else {
+                reject("Echec du téléchargement Exo4");
             }
-        },2000);
+        }, 2000);
     });
 }
 
@@ -76,7 +77,7 @@ telechargerFichier()
 function etape_1() {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("Étape 1 terminée");
+            resolve("Étape 1 terminée Exo5");
         }, 1000);
     });
 }
@@ -84,7 +85,7 @@ function etape_1() {
 function etape_2() {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("Étape 2 terminée");
+            resolve("Étape 2 terminée Exo5");
         }, 1000);
     });
 }
@@ -92,7 +93,7 @@ function etape_2() {
 function etape_3() {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("Étape 3 terminée");
+            resolve("Étape 3 terminée Exo5");
         }, 1000);
     });
 }
@@ -107,24 +108,24 @@ etape_1()
     })
     .then((message3) => {
         console.log(message3);
-        console.log("✅ Toutes les étapes sont terminées !");
+        console.log("✅ Toutes les étapes sont terminées Exo5!");
     })
     .catch((erreur) => {
-        console.error("❌ Une erreur est survenue :", erreur);
+        console.error("❌ Une erreur est survenue :Exo5", erreur);
     });
 
 // Ex6
 
 function etapeA() {
-    return new Promise((resolve) => setTimeout(() => resolve("Étape 1 terminée"), 1000));
+    return new Promise((resolve) => setTimeout(() => resolve("Étape 1 terminée Exo6"), 1000));
 }
 
 function etapeB() {
-    return new Promise((resolve) => setTimeout(() => resolve("Étape 2 terminée"), 1000));
+    return new Promise((resolve) => setTimeout(() => resolve("Étape 2 terminée Exo6"), 1000));
 }
 
 function etapeC() {
-    return new Promise((resolve) => setTimeout(() => resolve("Étape 3 terminée"), 1000));
+    return new Promise((resolve) => setTimeout(() => resolve("Étape 3 terminée Exo6"), 1000));
 }
 
 async function affichage() {
@@ -140,16 +141,16 @@ async function affichage() {
 }
 affichage();
 
-Ex7
+// Ex7
 
 function telechargerFichier() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const succes = Math.random() < 0.5;
             if (succes) {
-                resolve("Fichier téléchargé avec succès");
+                resolve("Fichier téléchargé avec succès Exo7");
             } else {
-                reject("Échec du téléchargement");
+                reject("Échec du téléchargement Exo7");
             }
         }, 2000);
     });
@@ -165,5 +166,4 @@ async function lancerTelechargement() {
 }
 
 lancerTelechargement();
-
 
