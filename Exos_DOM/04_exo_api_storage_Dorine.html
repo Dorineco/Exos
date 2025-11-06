@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de films via API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+
+        #films {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .film {
+            background: white;
+            border-radius: 8px;
+            width: 180px;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .film img {
+            max-width: 100%;
+            border-radius: 6px;
+        }
+
+        #details {
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recherche de films via API</h1>
+    <input type="text" id="FilmID" placeholder="mot clé">
+    <button id="searchBtn">Rechercher</button>
+    <h2>Résultat :</h2>
+    <div id="film-container"></div>
+
+    <!-- <h2>Contenu du localStorage :</h2>
+    <pre id="storage-content"></pre> -->
+
+    <script src="/Exos_DOM/04_exo_api_storage_Dorine.js" defer></script>
+</body>
+
+</html>
