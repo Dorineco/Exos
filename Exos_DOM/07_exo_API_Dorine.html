@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test API - Fetch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #users-container {
+            margin-top: 20px;
+        }
+
+        .user {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Liste des utilisateurs</h1>
+    <div id="users-container"></div>
+
+    <form id="user-form">
+        <input type="text" id="name" placeholder="Nom" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <pre id="result"></pre>
+
+    <script src="07_exo_API_Dorine.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+                <title>CRUD API avec Fetch</title>
+                <style>
+                    body {font - family: Arial; margin: 20px; background: #f4f4f9; }
+                    h1 {color: #333; }
+                    button {margin: 5px; padding: 8px 12px; border: none; background: #007bff; color: white; border-radius: 4px; cursor: pointer; }
+                    button:hover {background: #0056b3; }
+                    pre {background: #222; color: #0f0; padding: 10px; border-radius: 5px; max-width: 600px; overflow-x: auto; }
+                </style>
+        </head>
+        <body>
+
+            <h1>Test complet d'API REST</h1>
+
+            <button id="btnGet">GET (Lister)</button>
+            <button id="btnPost">POST (Ajouter)</button>
+            <button id="btnPut">PUT (Modifier)</button>
+            <button id="btnDelete">DELETE (Supprimer)</button>
+
+            <pre id="output">Résultats ici...</pre>
+
+            <script>
+                const API_URL = 'https://jsonplaceholder.typicode.com/users';
+                const output = document.getElementById('output');
+
+    // 🔹 1. GET - Lire les utilisateurs
+    document.getElementById('btnGet').addEventListener('click', async () => {
+      try {
+        const response = await fetch(API_URL);
+                const data = await response.json();
+                output.textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+                    output.textContent = 'Erreur GET : ' + err;
+      }
+    });
+
+    // 🔹 2. POST - Ajouter un utilisateur
+    document.getElementById('btnPost').addEventListener('click', async () => {
+      const newUser = {name: 'Alice Dupont', email: 'alice@example.com' };
+                try {
+        const response = await fetch(API_URL, {
+                    method: 'POST',
+                headers: {'Content-Type': 'application/json' },
+                body: JSON.stringify(newUser)
+        });
+                const data = await response.json();
+                output.textContent = 'Utilisateur créé :\n' + JSON.stringify(data, null, 2);
+      } catch (err) {
+                    output.textContent = 'Erreur POST : ' + err;
+      }
+    });
+
+    // 🔹 3. PUT - Modifier un utilisateur
+    document.getElementById('btnPut').addEventListener('click', async () => {
+      const updatedUser = {name: 'Utilisateur modifié', email: 'modif@example.com' };
+                try {
+        const response = await fetch(`${API_URL}/1`, {
+                    method: 'PUT',
+                headers: {'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedUser)
+        });
+                const data = await response.json();
+                output.textContent = 'Utilisateur modifié :\n' + JSON.stringify(data, null, 2);
+      } catch (err) {
+                    output.textContent = 'Erreur PUT : ' + err;
+      }
+    });
+
+    // 🔹 4. DELETE - Supprimer un utilisateur
+    document.getElementById('btnDelete').addEventListener('click', async () => {
+      try {
+        const response = await fetch(`${API_URL}/1`, {method: 'DELETE' });
+                if (response.ok) {
+                    output.textContent = 'Utilisateur supprimé avec succès.';
+        } else {
+                    output.textContent = 'Erreur DELETE : ' + response.status;
+        }
+      } catch (err) {
+                    output.textContent = 'Erreur DELETE : ' + err;
+      }
+    });
+            </script>
+        </body>
+    </html>
