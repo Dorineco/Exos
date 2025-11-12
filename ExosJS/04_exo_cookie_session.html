@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies et sessionStorage</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" minlength="8" maxlength="20" pattern="[a-zA-Z0-9]+">
+        <button id="submit">Envoyer</button>
+        <button id="cookie">Nettoyer le cookie</button>
+        <button id="session">Videz le sessionStorage</button>
+    </form>
+    <script src="04_exo_cookie_session.js" defer></script>
+</body>
+</html>

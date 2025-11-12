@@ -1,36 +1,38 @@
-
 body {
-    font-family:"trebuchet ms",sans-serif;
-    }
+    font-family: "trebuchet ms", sans-serif;
+}
 
 form {
-    display:flex;
+    display: flex;
     justify-content: center;
-    background-color:#FAFAFA;
-    padding:10px;
+    background-color: #FAFAFA;
+    padding: 10px;
 }
 
 fieldset {
-    padding:0 20px 20px 20px;
-    margin-bottom:10px;
-    border:1px solid #6097eb;
+    padding: 0 20px 20px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #6097eb;
 }
 
 legend {
     color: #6097eb;
-    font-weight:bold
-    }
+    font-weight: bold
+}
 
 label {
-    margin-top:10px;
-    display:block;
-    }
+    margin-top: 10px;
+    display: block;
+}
 
 select {
-    margin-top:10px;
-    }
+    margin-top: 10px;
+}
 
-input, textarea, select, option {
-    background-color:#FFF3F3;
-    }
+input,
+textarea,
+select,
+option {
+    background-color: #FFF3F3;
+}
 

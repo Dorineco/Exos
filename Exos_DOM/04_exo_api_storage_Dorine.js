@@ -1,49 +1,101 @@
-//récupère le mot au click
 const btn = document.getElementById('searchBtn');
 const filmContainer = document.getElementById('film-container');
-const storageContent = document.getElementById('storage-content');
 
 btn.addEventListener('click', () => {
-    const query = document.getElementById('filmID').value;
+    const query = document.getElementById('filmId').value.trim();
 
-    //Appel API
     fetch(`https://imdb.iamidiotareyoutoo.com/search?q=${query}`)
         .then(response => response.json())
         .then(data => {
-            localStorage.setItem(query, JSON.stringify(data.description)); //Stockage dans le localStorage
-            const films = JSON.parse(localStorage.getItem(query)); //récupère localStorage
+            const films = data.description;
+            console.log(films, "affiche");
 
+            localStorage.setItem(query, JSON.stringify(films));
 
-            //Affichage du film
             films.forEach(film => {
                 const filmDiv = document.createElement('div');
                 filmDiv.classList.add('film');
-                filmDiv.innerHTML = `<h3>${film['#TITLE']}</h3><img src="${film['#IMG_POSTER']}" width="100">`;
+                filmDiv.innerHTML = `
+                    <h3>${film['#TITLE']}</h3>
+                    <img src="${film['#IMG_POSTER'] || ''}" width="100" alt="${film['#TITLE']}">
+                `;
+                filmDiv.addEventListener('click', () => {
+                    afficherFilmDetails(film['#IMDB_ID']);
+                });
                 filmContainer.appendChild(filmDiv);
-                console.log(film['#IMDB_POSTER']);
-
             });
         })
-})
-//Création du lien vers les détails du film
-
-filmDiv.addEventListener('click', () => {showFilmDetails(film['#IMDB_ID'])});
+        .catch(error => console.error("Erreur lors de la recherche :", error));
+});
 
 
-    function afficherFilmDetails(imdbId) {
+// Fonction pour aller chercher les détails d’un film
+function afficherFilmDetails(imdbId) {
+    console.log("afficher", imdbId)
     fetch(`https://imdb.iamidiotareyoutoo.com/search?tt=${imdbId}`)
         .then(response => response.json())
-        .then(data => {const film = data.short;  
-    afficherFilmDetails(film);
-    });
+        .then(data => {
+            const film = data.short;
+            afficherFilmDetailsHTML(film);
+        })
+        .catch(error => console.error("Erreur lors de la récupération des détails :", error));
+}
 
-
-function FilmDetailsshort(film) {
+// Fonction d’affichage des détails
+function afficherFilmDetailsHTML(film) {
     const detailsContainer = document.getElementById('details');
     detailsContainer.innerHTML = `
         <h3>${film.name}</h3>
         <img src="${film.image}" alt="${film.name}" width="200">
         <p><strong>Description :</strong> ${film.description}</p>
-        <p><a href="${film.url}" target="_blank">Voir sur IMDb</a></p>`;
-
+        <p><a href="${film.url}" target="_blank">Voir sur IMDb</a></p>
+    `;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
