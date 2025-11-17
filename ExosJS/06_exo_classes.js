@@ -102,3 +102,44 @@ const c1 = new CompteBancaire();
 c1.deposer(100);   // Dépôt de 100 € effectué.
 c1.retirer(30);    // Retrait de 30 € effectué.
 console.log(c1.solde); // 70
+
+//exo5//
+
+// Classe parente
+class Forme {
+    surface() {
+        return "Surface non définie";
+    }
+}
+
+
+// Sous-classe Carré
+class Carre extends Forme {
+    constructor(cote) {
+        super();
+        this.cote = cote;
+    }
+
+    surface() {
+        return this.cote * this.cote;
+    }
+}
+
+// Sous-classe Cercle
+class Cercle extends Forme {
+    constructor(rayon) {
+        super();
+        this.rayon = rayon;
+    }
+
+    surface() {
+        return Math.PI * this.rayon * this.rayon;
+    }
+}
+
+// Tests
+const f1 = new Carre(4);
+console.log(f1.surface()); // 16
+
+const f2 = new Cercle(3);
+console.log(f2.surface().toFixed(2)); // 28.27 (approx)

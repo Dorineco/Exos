@@ -79,6 +79,8 @@ console.log(f1.surface()); // 16
 
 const f2 = new Cercle(3);
 console.log(f2.surface()); // 28.27 (approx)
+
+
 Exercice 6 — Classe avec collection d’objets : Bibliotheque
 Objectif : Gérer des objets à l’intérieur d’un autre objet.
 Énoncé :
